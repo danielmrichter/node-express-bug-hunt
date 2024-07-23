@@ -30,12 +30,12 @@ Fixed `quote.router.js` line 28: switch `app` to `router`. _This is the solution
 
 Fixed quote.router.js, adding in module.exports to export the router into the server.js file.
 
-Look, I'm bad at recording stuff. I notice bugs and I fix them.
+Look, I'm bad at recording stuff. I notice bugs and I fix them. I might have missed recording a couple.
 ### Bug 2
 While I was there, changed the quoteList from an object into an array, which it is supposed to be.
 
 ### Bug 3
-Fixed a typo somewhere as well, I don't even remember where. Think it was in the getQuotes function server side
+Fixed a typo in the GET client side for the getQuotes() function. Little rogue bracket found its way into the url. Consider yourself REMOVED bracket.
 
 ### Bug 4
 Static files weren't being delivered because express wasn't pointed in the correct spot to get deliver them from. Changed `static('/public')` on line 17 to `static('server/public')`
