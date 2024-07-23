@@ -26,8 +26,27 @@ Fixed `quote.router.js` line 28: switch `app` to `router`. _This is the solution
 
 ### Bug 1
 
-...
+`Router.use() requires a middleware function but got an object`
 
+Fixed quote.router.js, adding in module.exports to export the router into the server.js file.
+
+Look, I'm bad at recording stuff. I notice bugs and I fix them. I might have missed recording a couple.
+### Bug 2
+While I was there, changed the quoteList from an object into an array, which it is supposed to be.
+
+### Bug 3
+Fixed a typo in the GET client side for the getQuotes() function. Little rogue bracket found its way into the url. Consider yourself REMOVED bracket.
+
+### Bug 4
+Static files weren't being delivered because express wasn't pointed in the correct spot to get deliver them from. Changed `static('/public')` on line 17 to `static('server/public')`
+
+### Bug 5
+The GET request from client side was getting a 404. Changed the route in the quote.router.js file on the router.get to not be `/quotes` but to just be `/`. Because that's how it works... for some reason.
+### Bug 6
+POST request was getting an error. This wasn't because of the POST request, but a typo in the function call for `getQuotes()`.
+
+### Bug 7
+For some reason there was an `i+= 1` in the for of loop in the getQuotes() function. Deleted, though it doesn't actually do anything. Along with the i that was being tracked above it.
 ## Extra Practice (Optional)
 
 Complete the JS debugging exercises at:
